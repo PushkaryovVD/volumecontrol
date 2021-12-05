@@ -7,10 +7,9 @@ from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 import pyautogui as pg
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
- 
-################################
+
 wCam, hCam = 640, 480
-################################
+
  
 cap = cv2.VideoCapture(0)
 cap.set(3, wCam)
@@ -44,7 +43,7 @@ while True:
  
         # Filter based on size
         area = (bbox[2] - bbox[0]) * (bbox[3] - bbox[1]) // 100
-        # print(area)
+        #print(area)
         if 250 < area < 1000:
  
             # Find Distance between index and Thumb
@@ -61,7 +60,7 @@ while True:
  
             # Check fingers up
             fingers = detector.fingersUp()
-            # print(fingers)
+            #print(fingers)
  
             # If pinky is down set volume
             if not fingers[2]:
